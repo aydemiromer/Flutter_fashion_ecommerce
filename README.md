@@ -13,6 +13,9 @@ If you want to reach me and ask questions, you can reach me from these social ac
 You can use this if you want to buy me coffee. 
 - [Buy me a Coffee](https://www.buymeacoffee.com/aydemiromer)
 
+The figma design I used
+- [Figma](https://t.co/06u1CyECER)
+
 
 ### Content Series
 
