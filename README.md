@@ -1,12 +1,49 @@
-# fashion_ecommerce_app
+# Flutter Fashion Ecommerce App with Supabase Backend
 
-A new Flutter project.
+This is a youtube content series, you can reach my channel and watch the videos.You can follow the video titles with branches. I create new branch for each video.
+- [My Youtube Channel](https://www.youtube.com/channel/UCfmD7uvqcamJlikOk5PWcww)
 
-## Getting Started
+If you want to follow this series from articles, you can find it here.
+- [My Medium Page](https://medium.com/@aydemirerdemomer)
 
-This project is a starting point for a Flutter application.
+If you want to reach me and ask questions, you can reach me from these social accounts.
+- [My Twitter Account](https://twitter.com/aydemireo)
+- [My Linkedin Account](https://www.linkedin.com/in/%C3%B6mererdemaydemir/)
 
-A few resources to get you started if this is your first Flutter project:
+You can use this if you want to buy me coffee. 
+- [Buy me a Coffee](https://www.buymeacoffee.com/aydemiromer)
+
+
+### Content Series
+
+- [x] Folder Structure 01
+- [x] Constant Variables 02
+- [x] Widgets 03
+- [ ] LoginPageUI 04
+- [ ] RegisterPageUI 05
+- [ ] ForgotPasswordPageUI 06
+- [ ] Supabase Integration 07
+- [ ] GoRoute and Riverpod Integration 08
+- [ ] Supabase Auth Services 09 
+- [ ] Register with Supabase 10
+- [ ] Login wih Supabase 11
+- [ ] Understand card design 12
+- [ ] Create card design with Supabase 13
+- [ ] Create Card Widgets  14
+- [ ] Create Main Page 15
+.
+.
+.
+.
+
+
+
+
+
+
+
+
+
 
 - [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
