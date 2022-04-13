@@ -19,7 +19,10 @@ dependencies:
 
  
   cupertino_icons: ^1.0.2
+  #localization
   intl: ^0.17.0
+  #route
+  go_router: ^3.0.4
 
 dev_dependencies:
   flutter_test:

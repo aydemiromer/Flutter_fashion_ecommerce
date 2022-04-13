@@ -7,7 +7,7 @@ class CustomIconButton extends StatelessWidget {
   final Color color;
   final Image icon;
 
-  CustomIconButton(
+  const CustomIconButton(
       {Key? key,
       required this.height,
       required this.width,

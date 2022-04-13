@@ -10,8 +10,8 @@ class TextStyles {
       fontSize: 18, fontWeight: FontWeight.bold, color: AppColor.black);
   static TextStyle elevenpx(BuildContext context) => const TextStyle(
       fontSize: 11, fontWeight: FontWeight.normal, color: AppColor.black);
-  static TextStyle fourteenpx(BuildContext context) => const TextStyle(
-      fontSize: 14, fontWeight: FontWeight.normal, color: AppColor.black);
+  static TextStyle fourteenpx(BuildContext context, Color color) =>
+      TextStyle(fontSize: 14, fontWeight: FontWeight.normal, color: color);
   static TextStyle sixteenpx(BuildContext context) => const TextStyle(
       fontSize: 16, fontWeight: FontWeight.normal, color: AppColor.black);
   static TextStyle description(BuildContext context) => const TextStyle(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class CustomElevatedButton extends StatelessWidget {
   Widget? child;
   final Color color;
@@ -10,6 +11,7 @@ class CustomElevatedButton extends StatelessWidget {
 
   CustomElevatedButton(
       {Key? key,
+      this.child,
       required this.color,
       this.height = 50.0,
       required this.width,
