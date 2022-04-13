@@ -22,7 +22,7 @@ The figma design I used
 - [x] Folder Structure 01
 - [x] Constant Variables 02
 - [x] Widgets 03
-- [ ] LoginPageUI 04
+- [x] LoginPageUI 04
 - [ ] RegisterPageUI 05
 - [ ] ForgotPasswordPageUI 06
 - [ ] Supabase Integration 07
