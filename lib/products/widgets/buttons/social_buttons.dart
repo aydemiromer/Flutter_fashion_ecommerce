@@ -1,4 +1,3 @@
-
 import 'package:fashion_ecommerce_app/core/constants/color/color.dart';
 import 'package:fashion_ecommerce_app/core/constants/images/images.dart';
 import 'package:fashion_ecommerce_app/products/widgets/buttons/custom_elevated_button.dart';
@@ -10,9 +9,10 @@ class GoogleSignIn extends CustomElevatedButton {
   GoogleSignIn({Key? key, required BuildContext context})
       : super(
             key: key,
-            borderRadius: 24, 
+            borderRadius: 24,
             color: AppColor.bg,
             width: context.width * 0.2,
+            height: context.height * 0.08,
             onPressed: () {},
             child: Image.asset(
               AppImages.google,
@@ -26,6 +26,7 @@ class FacebookSignIn extends CustomElevatedButton {
             key: key,
             color: AppColor.bg,
             borderRadius: 24,
+            height: context.height * 0.08,
             width: context.width * 0.2,
             onPressed: () {},
             child: Image.asset(
