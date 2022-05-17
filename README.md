@@ -23,8 +23,8 @@ The figma design I used
 - [x] Constant Variables 02
 - [x] Widgets 03
 - [x] LoginPageUI 04
-- [ ] RegisterPageUI 05
-- [ ] ForgotPasswordPageUI 06
+- [x] RegisterPageUI 05
+- [x] ForgotPasswordPageUI 06
 - [ ] Supabase Integration 07
 - [ ] GoRoute and Riverpod Integration 08
 - [ ] Supabase Auth Services 09 
