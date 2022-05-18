@@ -34,7 +34,10 @@ Widget body(BuildContext context, formKey, _emailControler, _passwordControler,
       child: Column(
         children: [
           SizedBox(height: context.height * 0.1),
-          title(context,AppLocalizations.of(context).loginScreenTitle,),
+          title(
+            context,
+            AppLocalizations.of(context).loginScreenTitle,
+          ),
           SizedBox(height: context.height * 0.06),
           form(context, formKey, _emailControler, _passwordControler, _email,
               _password),
@@ -49,11 +52,10 @@ Widget body(BuildContext context, formKey, _emailControler, _passwordControler,
     ));
 
 // My Title Widget
-Widget title(BuildContext context ,String text) => Container(
+Widget title(BuildContext context, String text) => Container(
       alignment: Alignment.topLeft,
       child: Text(
-      text, 
-        
+        text,
         textAlign: TextAlign.left,
         style: TextStyles.headline(context),
       ),
