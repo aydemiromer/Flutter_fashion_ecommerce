@@ -28,6 +28,10 @@ dependencies:
   #SUPABASE
   supabase_flutter: ^0.2.12
 
+  ##State Management
+  riverpod: ^1.0.3
+  flutter_riverpod: ^1.0.3
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
