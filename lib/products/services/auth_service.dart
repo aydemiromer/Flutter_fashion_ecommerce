@@ -1,4 +1,9 @@
-import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:supabase_flutter/supabase_flutter.dart' hide Provider;
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'package:gotrue/gotrue.dart' as gotrue;
+
+final authServiceRiverpod = Provider<AuthService>((_) => AuthService());
 
 class AuthService {
   final supabase = Supabase.instance.client;
@@ -50,7 +55,7 @@ class AuthService {
 
   Future<void> signInWithGoogle() async {
     GotrueSessionResponse response =
-        await supabase.auth.signIn(provider: Provider.google);
+        await supabase.auth.signIn(provider: gotrue.Provider.google);
     if (response.error != null) {
       // Sign in with google not working! response Error!  Add your message or other things.
       print(response.error);
@@ -67,7 +72,7 @@ class AuthService {
 
   Future<void> signInWithFacebook() async {
     GotrueSessionResponse response =
-        await supabase.auth.signIn(provider: Provider.facebook);
+        await supabase.auth.signIn(provider: gotrue.Provider.facebook);
     if (response.error != null) {
       // Sign in with google not working! response Error!  Add your message or other things.
       print(response.error);
@@ -80,7 +85,7 @@ class AuthService {
     }
   }
 
-  // This is SignOut Function 
+  // This is SignOut Function
 
   Future<void> signOut() async {
     await supabase.auth.signOut();

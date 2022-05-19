@@ -3,16 +3,20 @@ import 'package:fashion_ecommerce_app/products/widgets/buttons/custom_elevated_b
 import 'package:fashion_ecommerce_app/products/widgets/textfields/custom_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../core/constants/color/color.dart';
 import '../../core/constants/style/text_styles.dart';
+import '../../products/services/auth_service.dart';
 import '../../products/widgets/buttons/social_buttons.dart';
 
-class LoginViewPage extends StatelessWidget {
+class LoginViewPage extends ConsumerWidget {
   const LoginViewPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final AuthService authService = ref.watch(authServiceRiverpod);
+
     GlobalKey<FormState>? formKey;
     final TextEditingController _emailControler = TextEditingController();
     final TextEditingController _passwordControler = TextEditingController();
@@ -20,14 +24,14 @@ class LoginViewPage extends StatelessWidget {
     String _password = _passwordControler.text;
     return Scaffold(
       body: body(context, formKey, _emailControler, _passwordControler, _email,
-          _password),
+          _password, authService),
     );
   }
 }
 
 // My Body Widget
 Widget body(BuildContext context, formKey, _emailControler, _passwordControler,
-        _email, _password) =>
+        _email, _password, authService) =>
     SafeArea(
         child: Padding(
       padding: context.paddingLow,
@@ -43,7 +47,8 @@ Widget body(BuildContext context, formKey, _emailControler, _passwordControler,
               _password),
           forgotPassword(context),
           SizedBox(height: context.height * 0.06),
-          _loginbutton(context),
+          _loginbutton(
+              context, authService, _emailControler, _passwordControler),
           SizedBox(height: context.height * 0.16),
           text(context),
           socialButtons(context),
@@ -103,10 +108,15 @@ Widget forgotPassword(BuildContext context) => Container(
     );
 
 // My Login Button Widget
-Widget _loginbutton(BuildContext context) => CustomElevatedButton(
+Widget _loginbutton(BuildContext context, authService, _emailControler,
+        _passwordControler) =>
+    CustomElevatedButton(
       color: AppColor.primary,
       width: context.width * 0.8,
-      onPressed: () {},
+      onPressed: () async {
+        await authService.signInWithEmailandPassword(
+            _emailControler.text, _passwordControler.text);
+      },
       borderRadius: 25,
       child: Text(
         AppLocalizations.of(context).loginScreenTitle.toUpperCase(),

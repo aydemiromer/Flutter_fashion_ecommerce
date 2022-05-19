@@ -1,18 +1,22 @@
 import 'package:fashion_ecommerce_app/core/constants/color/color.dart';
 import 'package:fashion_ecommerce_app/core/constants/extensions/context_extension.dart';
 import 'package:fashion_ecommerce_app/core/constants/style/text_styles.dart';
+import 'package:fashion_ecommerce_app/products/services/auth_service.dart';
 import 'package:fashion_ecommerce_app/view/auth/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../products/widgets/buttons/custom_elevated_button.dart';
 import '../../products/widgets/textfields/custom_textfield.dart';
 
-class RegisterPageView extends StatelessWidget {
+class RegisterPageView extends ConsumerWidget {
   const RegisterPageView({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final AuthService authService = ref.watch(authServiceRiverpod);
+
     GlobalKey<FormState>? formKey;
     final TextEditingController _emailControler = TextEditingController();
     final TextEditingController _nameControler = TextEditingController();
@@ -21,13 +25,13 @@ class RegisterPageView extends StatelessWidget {
     String _password = _passwordControler.text;
     return Scaffold(
       body: _bodyRegisterWidget(context, formKey, _nameControler,
-          _emailControler, _passwordControler, _email, _password),
+          _emailControler, _passwordControler, _email, _password, authService),
     );
   }
 }
 
 Widget _bodyRegisterWidget(BuildContext context, formKey, _nameController,
-        _emailControler, _passwordControler, _email, _password) =>
+        _emailControler, _passwordControler, _email, _password, authService) =>
     SafeArea(
       child: SingleChildScrollView(
         child: Padding(
@@ -51,7 +55,8 @@ Widget _bodyRegisterWidget(BuildContext context, formKey, _nameController,
               SizedBox(
                 height: context.height * 0.1,
               ),
-              _registerButton(context),
+              _registerButton(
+                  context, authService, _emailControler, _passwordControler),
               SizedBox(
                 height: context.height * 0.12,
               ),
@@ -110,10 +115,15 @@ Widget form(BuildContext context, formKey, _nameControler, _emailControler,
       ]),
     );
 
-Widget _registerButton(BuildContext context) => CustomElevatedButton(
+Widget _registerButton(BuildContext context, authService, _emailControler,
+        _passwordControler) =>
+    CustomElevatedButton(
       color: AppColor.primary,
       width: context.width * 0.8,
-      onPressed: () {},
+      onPressed: () async {
+        await authService.createUserWithEmailandPassword(
+            _emailControler.text, _passwordControler.text);
+      },
       borderRadius: 25,
       child: Text(
         AppLocalizations.of(context).signUpTitle.toUpperCase(),
