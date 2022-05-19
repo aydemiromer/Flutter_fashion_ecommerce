@@ -32,6 +32,10 @@ dependencies:
   riverpod: ^1.0.3
   flutter_riverpod: ^1.0.3
 
+  ##rating bar
+  flutter_rating_bar: ^4.0.0
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

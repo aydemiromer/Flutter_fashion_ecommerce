@@ -1,30 +1,33 @@
 import 'package:flutter/material.dart';
 
 class CustomIconButton extends StatelessWidget {
-  final double height;
-  final double width;
+ 
   final VoidCallback onPressed;
-  final Color color;
-  final Image icon;
+  final Color iconcolor;
+  final Color bgcolor;
+  final IconData icon;
 
   const CustomIconButton(
       {Key? key,
-      required this.height,
-      required this.width,
+     
       required this.onPressed,
-      required this.color,
+      required this.iconcolor,
+      required this.bgcolor,
       required this.icon})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: height,
-      width: width,
-      child: IconButton(
-        onPressed: onPressed,
-        icon: icon,
-        color: color,
+    return ElevatedButton(
+      onPressed: onPressed,
+      child: Icon(
+        icon,
+        size: 15,
+        color: iconcolor,
+      ),
+      style: ButtonStyle(
+        shape: MaterialStateProperty.all(const CircleBorder()), 
+        backgroundColor: MaterialStateProperty.all(bgcolor)
       ),
     );
   }
