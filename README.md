@@ -25,12 +25,12 @@ The figma design I used
 - [x] LoginPageUI 04
 - [x] RegisterPageUI 05
 - [x] ForgotPasswordPageUI 06
-- [ ] Supabase Integration 07
-- [ ] GoRoute and Riverpod Integration 08
-- [ ] Supabase Auth Services 09 
-- [ ] Register with Supabase 10
-- [ ] Login wih Supabase 11
-- [ ] Understand card design 12
+- [x] Supabase Integration 07
+- [x] GoRoute and Riverpod Integration 08
+- [x] Supabase Auth Services 09 
+- [x] Register with Supabase 10
+- [x] Login wih Supabase 11
+- [x] Understand card design 12
 - [ ] Create card design with Supabase 13
 - [ ] Create Card Widgets  14
 - [ ] Create Main Page 15
